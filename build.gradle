@@ -49,6 +49,10 @@ ext {
     rulesVersion = '1.0.1'
     espressoVersion = '3.1.1'
     roomVersion = '2.0.0'
+    retrofitVersion= '2.7.0'
+    gsonVersion= '2.8.5'
+    interceptorVersion='4.2.1'
+    okHTTPVersion= '3.3.0'
     archLifecycleVersion = '2.0.0'
     archTestingVersion = '1.1.1'
 }

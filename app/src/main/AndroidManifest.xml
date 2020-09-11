@@ -48,13 +48,28 @@
                 android:value=".tasks.TasksActivity" />
         </activity>
 
+        <activity android:name=".discoversearch.DiscoverSearchActivity">
+            <!--REMOVE THESE LINES WHEN WORK FINISH-->
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
 
-        <activity android:name=".tasks.DiscoverSearchActivity">
+        <activity android:name=".inbox.InboxActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name=".home.UserProfileActivity">
             <!--REMOVE THESE LINES WHEN WORK FINISH-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>

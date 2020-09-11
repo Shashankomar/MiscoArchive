@@ -2,11 +2,86 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="400dp"
-    android:background="@drawable/logo"
+    android:layout_margin="1dp"
+    android:background="@color/black"
+    android:padding="@dimen/dp_10"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="frhed"/>
+        android:layout_above="@+id/tv_description"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:background="#595757"
+        android:padding="@dimen/dp_2"
+        android:text="2019-10-05"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_views"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:ellipsize="end"
+
+        android:maxLines="3"
+        android:text="fun app discription sjlfjslfksjfls fslkf slfjslfk slf slfksflksj lsj flskf jlsj lskf slfjslkf lsfj slfjsfl ksfj lsjflks fls flksjflksf jslfj sljf slkdfsld fslk fslfsl kfslk fslkf slkfs flsdk"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rl_views"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_profile_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_toStartOf="@+id/iv_like"
+            android:layout_toLeftOf="@+id/iv_like"
+            android:layout_toEndOf="@+id/iv_profile_pic"
+            android:layout_toRightOf="@+id/iv_profile_pic"
+            android:text="Samuelgrubbs"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/tv_views"
+            android:layout_toLeftOf="@+id/tv_views"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:id="@+id/tv_views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:text="10.6M"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

@@ -19,16 +19,18 @@ package com.example.android.architecture.blueprints.todoapp;
 import android.annotation.SuppressLint;
 import android.app.Application;
 
-import com.example.android.architecture.blueprints.todoapp.addedittask.AddEditTaskViewModel;
-import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository;
-import com.example.android.architecture.blueprints.todoapp.statistics.StatisticsViewModel;
-import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailViewModel;
-import com.example.android.architecture.blueprints.todoapp.tasks.DiscoverSearchViewModel;
-import com.example.android.architecture.blueprints.todoapp.tasks.TasksViewModel;
-
 import androidx.annotation.VisibleForTesting;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.android.architecture.blueprints.todoapp.addedittask.AddEditTaskViewModel;
+import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository;
+import com.example.android.architecture.blueprints.todoapp.discoversearch.DiscoverSearchViewModel;
+import com.example.android.architecture.blueprints.todoapp.home.UserProfileViewModel;
+import com.example.android.architecture.blueprints.todoapp.inbox.InboxViewModel;
+import com.example.android.architecture.blueprints.todoapp.statistics.StatisticsViewModel;
+import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailViewModel;
+import com.example.android.architecture.blueprints.todoapp.tasks.TasksViewModel;
 
 /**
  * A creator is used to inject the product ID into the ViewModel
@@ -86,8 +88,13 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         }else if (modelClass.isAssignableFrom(DiscoverSearchViewModel.class)) {
             //noinspection unchecked
             return (T) new DiscoverSearchViewModel(mTasksRepository);
+        } else if (modelClass.isAssignableFrom(InboxViewModel.class)) {
+            //noinspection unchecked
+            return (T) new InboxViewModel(mTasksRepository);
+        } else if (modelClass.isAssignableFrom(UserProfileViewModel.class)) {
+            //noinspection unchecked
+            return (T) new UserProfileViewModel(mTasksRepository);
         }
-
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }
 }
