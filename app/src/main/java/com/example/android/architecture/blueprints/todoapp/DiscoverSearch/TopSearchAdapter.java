@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.tasks;
+package com.example.android.architecture.blueprints.todoapp.DiscoverSearch;
 
 import android.content.Context;
 import android.view.LayoutInflater;

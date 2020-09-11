@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.tasks;
+package com.example.android.architecture.blueprints.todoapp.DiscoverSearch;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,17 +8,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.architecture.blueprints.todoapp.R;
 
-public class SoundsSearchFragment extends Fragment {
-    private RecyclerView mRvSounds;
+public class TopSearchFragment extends Fragment {
+
+    private RecyclerView mRvTop;
 
     public static Fragment newInstance(int i) {
         Bundle args = new Bundle();
-        SoundsSearchFragment fragment = new SoundsSearchFragment();
+        TopSearchFragment fragment = new TopSearchFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -26,20 +27,20 @@ public class SoundsSearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sounds_search, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_top_search, container, false);
         initView(view);
         setRecyclerView();
-
         return view;
     }
+
     private void initView(View view) {
-        mRvSounds = view.findViewById(R.id.rv_sounds);
+        mRvTop = view.findViewById(R.id.rv_top);
     }
 
     private void setRecyclerView() {
-        SoundsSearchAdapter adapter = new SoundsSearchAdapter(getContext());
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        mRvSounds.setLayoutManager(layoutManager);
-        mRvSounds.setAdapter(adapter);
-    }}
+        TopSearchAdapter adapter = new TopSearchAdapter(getContext());
+        GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
+        mRvTop.setLayoutManager(manager);
+        mRvTop.setAdapter(adapter);
+    }
+}

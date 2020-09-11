@@ -49,7 +49,7 @@
         </activity>
 
 
-        <activity android:name=".tasks.DiscoverSearchActivity">
+        <activity android:name=".DiscoverSearch.DiscoverSearchActivity">
             <!--REMOVE THESE LINES WHEN WORK FINISH-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

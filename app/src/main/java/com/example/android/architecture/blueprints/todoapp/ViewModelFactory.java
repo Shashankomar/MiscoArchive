@@ -23,7 +23,7 @@ import com.example.android.architecture.blueprints.todoapp.addedittask.AddEditTa
 import com.example.android.architecture.blueprints.todoapp.data.source.TasksRepository;
 import com.example.android.architecture.blueprints.todoapp.statistics.StatisticsViewModel;
 import com.example.android.architecture.blueprints.todoapp.taskdetail.TaskDetailViewModel;
-import com.example.android.architecture.blueprints.todoapp.tasks.DiscoverSearchViewModel;
+import com.example.android.architecture.blueprints.todoapp.DiscoverSearch.DiscoverSearchViewModel;
 import com.example.android.architecture.blueprints.todoapp.tasks.TasksViewModel;
 
 import androidx.annotation.VisibleForTesting;

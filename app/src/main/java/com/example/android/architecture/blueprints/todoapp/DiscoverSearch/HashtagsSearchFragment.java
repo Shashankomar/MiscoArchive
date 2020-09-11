@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.tasks;
+package com.example.android.architecture.blueprints.todoapp.DiscoverSearch;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.architecture.blueprints.todoapp.R;
 
-public class VideosSearchFragment extends Fragment {
-    private RecyclerView mRvVideos;
+public class HashtagsSearchFragment extends Fragment {
+    private RecyclerView mRvHashtags;
 
     public static Fragment newInstance(int i) {
         Bundle args = new Bundle();
-        VideosSearchFragment fragment = new VideosSearchFragment();
+        HashtagsSearchFragment fragment = new HashtagsSearchFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -26,7 +26,7 @@ public class VideosSearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_videos_search, container, false);
+        View view = inflater.inflate(R.layout.fragment_hashtags_search, container, false);
 
         initView(view);
         setRecyclerView();
@@ -35,13 +35,13 @@ public class VideosSearchFragment extends Fragment {
     }
 
     private void initView(View view) {
-        mRvVideos = view.findViewById(R.id.rv_videos);
+        mRvHashtags = view.findViewById(R.id.rv_hashtags);
     }
 
     private void setRecyclerView() {
-        VideosSearchAdapter adapter = new VideosSearchAdapter(getContext());
-        GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
-        mRvVideos.setLayoutManager(manager);
-        mRvVideos.setAdapter(adapter);
+        HashtagsSearchAdapter adapter = new HashtagsSearchAdapter(getContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        mRvHashtags.setLayoutManager(layoutManager);
+        mRvHashtags.setAdapter(adapter);
     }
 }

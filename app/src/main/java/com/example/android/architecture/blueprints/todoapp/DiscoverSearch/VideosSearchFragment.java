@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.tasks;
+package com.example.android.architecture.blueprints.todoapp.DiscoverSearch;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,13 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.architecture.blueprints.todoapp.R;
 
-public class TopSearchFragment extends Fragment {
-
-    private RecyclerView mRvTop;
+public class VideosSearchFragment extends Fragment {
+    private RecyclerView mRvVideos;
 
     public static Fragment newInstance(int i) {
         Bundle args = new Bundle();
-        TopSearchFragment fragment = new TopSearchFragment();
+        VideosSearchFragment fragment = new VideosSearchFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -27,20 +26,22 @@ public class TopSearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_top_search, container, false);
+        View view = inflater.inflate(R.layout.fragment_videos_search, container, false);
+
         initView(view);
         setRecyclerView();
+
         return view;
     }
 
     private void initView(View view) {
-        mRvTop = view.findViewById(R.id.rv_top);
+        mRvVideos = view.findViewById(R.id.rv_videos);
     }
 
     private void setRecyclerView() {
-        TopSearchAdapter adapter = new TopSearchAdapter(getContext());
+        VideosSearchAdapter adapter = new VideosSearchAdapter(getContext());
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
-        mRvTop.setLayoutManager(manager);
-        mRvTop.setAdapter(adapter);
+        mRvVideos.setLayoutManager(manager);
+        mRvVideos.setAdapter(adapter);
     }
 }

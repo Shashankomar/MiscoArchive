@@ -1,4 +1,4 @@
-package com.example.android.architecture.blueprints.todoapp.tasks;
+package com.example.android.architecture.blueprints.todoapp.DiscoverSearch;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,12 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.architecture.blueprints.todoapp.R;
 
-public class HashtagsSearchFragment extends Fragment {
-    private RecyclerView mRvHashtags;
+public class UsersSearchFragment extends Fragment {
+    private RecyclerView mRvUsers;
 
     public static Fragment newInstance(int i) {
         Bundle args = new Bundle();
-        HashtagsSearchFragment fragment = new HashtagsSearchFragment();
+        UsersSearchFragment fragment = new UsersSearchFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -26,22 +26,19 @@ public class HashtagsSearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_hashtags_search, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_users_search, container, false);
         initView(view);
         setRecyclerView();
 
         return view;
     }
-
     private void initView(View view) {
-        mRvHashtags = view.findViewById(R.id.rv_hashtags);
+        mRvUsers = view.findViewById(R.id.rv_users);
     }
 
     private void setRecyclerView() {
-        HashtagsSearchAdapter adapter = new HashtagsSearchAdapter(getContext());
+        UsersSearchAdapter adapter = new UsersSearchAdapter(getContext());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        mRvHashtags.setLayoutManager(layoutManager);
-        mRvHashtags.setAdapter(adapter);
-    }
-}
+        mRvUsers.setLayoutManager(layoutManager);
+        mRvUsers.setAdapter(adapter);
+    }}
